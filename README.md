@@ -14,6 +14,10 @@ A Vision encoder decoder model has been used for extracting the descriptive capt
 #### Social Media Caption Conversion
 The output of the previous model is then fed to Chat-GPT for producing social media style captions. The repo also has options for generating hashtags, long captions or short ones with or wihout the emojis.
 
+## Sample Results
+The three sample test images that were given have been added for reference below - 
+![alt text](https://github.com/IshanTiwari-030800/Social-media-caption-generation/blob/main/results.png)
+
 ## Installation and Quick Start
 To use the repo and run inferences, please follow the guidelines below
 
