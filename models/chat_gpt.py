@@ -1,5 +1,5 @@
 import openai
-openai.api_key = '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'
+openai.api_key = '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'
 
 def generate_response_chatgpt(message):
 
