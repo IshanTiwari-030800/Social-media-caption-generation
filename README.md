@@ -35,11 +35,9 @@ To use the repo and run inferences, please follow the guidelines below
         $ virtualenv venv
         $ source venv/bin/activate
         $ pip install -r requirements.txt
-
-- Running the file for inference:
-
-        $ streamlit run app.py
         
 - CLI Command
 
         $ python demo.py --image-file Image path --option (caption, hashtag) --caption_options (Long, short)
+
+A Streamlit application for the same has been provided hosted in Google Colab. 
