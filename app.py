@@ -39,6 +39,10 @@ def image_page():
 
     # Add a file uploader widget to allow the user to upload a video file
     image_file = st.file_uploader("Upload an image", type=["png","jpg","jpeg"])
+    
+    # Display the image
+    image = Image.open(image_file)
+    st.image(image)
 
     option = st.selectbox('Choose the type for caption you want to generate',
     ('long caption', 'short caption', 'hashtag'))
