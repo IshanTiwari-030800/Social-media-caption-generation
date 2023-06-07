@@ -38,30 +38,29 @@ def image_page():
     st.title("Generate Captions!")
 
     # Add a file uploader widget to allow the user to upload a video file
-    image_file = st.file_uploader("Upload an image", type=["png","jpg","jpeg"])
-    
-    # Display the image
-    image = Image.open(image_file)
-    st.image(image)
+    image_file = st.file_uploader("Upload an image", type=["png","jpg","jpeg"]) 
 
     option = st.selectbox('Choose the type for caption you want to generate',
     ('long caption', 'short caption', 'hashtag'))
 
     # If the user has uploaded a video file, process it and display the output list
     if image_file is not None:
-        if st.button('Generate'):
-            pred = predict_step([image_file])
-            prompt = prompt_generate(option)
-            question = pred[0] + prompt
-            message = [{'role':'user', 'content':question}]
-            response_gpt = generate_response_chatgpt(message)
-            if response_gpt is not None:
-                st.markdown(
-                    """
-                    ### The generated caption is:
-                    """
-                )
-                st.write(response_gpt)
+        image = Image.open(image_file)
+        col1, col2 = st.columns([0.5,0.5])
+
+        with col1:
+          st.markdown('<p style="text-align: center;">Input image</p>',unsafe_allow_html=True)
+          st.image(image,width=300)
+
+        with col2:
+          if st.button('Generate'):
+              pred = predict_step(image_file)
+              prompt = prompt_generate(option)
+              question = pred[0] + prompt
+              message = [{'role':'user', 'content':question}]
+              response_gpt = generate_response_chatgpt(message)
+              if response_gpt is not None:
+                  st.write(response_gpt)
 
 # Define the Streamlit app
 def main():
