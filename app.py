@@ -1,6 +1,6 @@
 import streamlit as st
 from models.chat_gpt import generate_response_chatgpt
-from demo import predict_step
+from caption_generator import predict_step
 from PIL import Image
 import requests
 from io import BytesIO
