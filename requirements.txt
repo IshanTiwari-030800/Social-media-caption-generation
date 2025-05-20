@@ -1,0 +1,4 @@
+transformers==4.39.3
+flask==2.3.3
+flask-cors==3.1.1
+pyngrok==5.3.0
